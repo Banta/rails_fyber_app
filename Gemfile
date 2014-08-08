@@ -14,6 +14,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'figaro'
 gem "typhoeus"
 
+# UI gems
+gem 'bootstrap-sass'
+gem 'simple_form'
+
 gem 'rspec'
 
 group :development do
