@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   get 'offers/offers'
 
-  root 'offers/check'
+  root 'offers#check'
 end
