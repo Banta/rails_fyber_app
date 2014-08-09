@@ -13,8 +13,9 @@
                 <div class=‘offer’>
                   <div class=‘title’><%= link_to offer['title'], offer['link'] %></div>
                   <div class=‘payout’><%= offer['payout'] %></div>
-                  <div class=‘thumbnail’><%= offer['thumbnail']['hires'] %></div>
+                  <div class=‘thumbnail’><%= image_tag offer['thumbnail']['hires'] %></div>
                 </div>
+                <hr />
             <% end %>
         <% else %>
             <div class=‘no_offers’>
