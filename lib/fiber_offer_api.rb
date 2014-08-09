@@ -24,10 +24,8 @@ class FiberOfferApi
     )
 
     @success = response.success?
-    if response.success?
-      @code = response.code
-      @body = JSON.parse(response.body)
-    end
+    @code = response.code
+    @body = JSON.parse(response.body)
   end
 
   def getHashKey
