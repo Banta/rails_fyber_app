@@ -4,7 +4,8 @@ class OffersController < ApplicationController
 
   def offers
     require 'fiber_offer_api'
-
+    @validated = false
+    @success = false
     if params[:uid].blank? || params[:pub0].blank? || params[:page].blank?
       arr = []
       if params[:uid].blank?
@@ -19,8 +20,9 @@ class OffersController < ApplicationController
         arr << "Page is required"
       end
 
-      flash[:alert] = arr.to_sentence
-      redirect_to offers_check_path and return
+      flash[:alert].now = arr.to_sentence
+    else
+      @validated = true
     end
 
     fiber_offer_api = FiberOfferApi.new(params[:uid], params[:pub0], params[:page])
@@ -28,9 +30,9 @@ class OffersController < ApplicationController
     if fiber_offer_api.success
       flash[:notice] = fiber_offer_api.body['message']
       @offers = fiber_offer_api.body['offers']
+      @success = true
     else
       flash[:alert] = "#{fiber_offer_api.body['code']}: #{fiber_offer_api.body['message']}. Please try again or contact admin"
-      redirect_to offers_check_path and return
     end
 
   end

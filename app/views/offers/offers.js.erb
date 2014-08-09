@@ -1,2 +1,10 @@
-$('#dynamic_content').html("<%= escape_javascript(render 'offers', offers: @offers) %>")
-$('#offersModal').modal('toggle');
+<% if @validated %>
+    <% if @success %>
+        $('#dynamic_content').html("<%= escape_javascript(render 'offers', offers: @offers) %>")
+        $('#offersModal').modal('toggle');
+    <% else %>
+        window.location.href = "/offers/check";
+    <% end %>
+<% else %>
+    window.location.href = "/offers/check";
+<% end %>
