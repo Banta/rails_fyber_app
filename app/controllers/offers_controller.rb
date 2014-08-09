@@ -23,5 +23,15 @@ class OffersController < ApplicationController
       redirect_to offers_check_path and return
     end
 
+    fiber_offer_api = FiberOfferApi.new(params[:uid], params[:pub0], params[:page])
+
+    if fiber_offer_api.success
+      flash[:notice] = fiber_offer_api.body['message']
+
+    else
+      flash[:alert] = "#{fiber_offer_api.body['code']}: #{fiber_offer_api.body['message']}. Please try again or contact admin"
+      redirect_to offers_check_path and return
+    end
+
   end
 end
