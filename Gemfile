@@ -17,7 +17,6 @@ gem "typhoeus"
 # UI gems
 gem 'bootstrap-sass'
 gem 'simple_form'
-gem 'font-awesome-sass'
 
 gem 'rspec'
 
