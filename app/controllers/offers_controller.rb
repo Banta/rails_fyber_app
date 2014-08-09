@@ -27,7 +27,7 @@ class OffersController < ApplicationController
 
     if fiber_offer_api.success
       flash[:notice] = fiber_offer_api.body['message']
-
+      @offers = fiber_offer_api.body['offers']
     else
       flash[:alert] = "#{fiber_offer_api.body['code']}: #{fiber_offer_api.body['message']}. Please try again or contact admin"
       redirect_to offers_check_path and return
