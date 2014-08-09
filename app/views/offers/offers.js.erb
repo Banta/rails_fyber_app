@@ -1,0 +1,2 @@
+$('#dynamic_content').html("<%= escape_javascript(render 'offers', offers: @offers) %>")
+$('#offersModal').modal('toggle');

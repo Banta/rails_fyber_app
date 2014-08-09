@@ -1,0 +1,26 @@
+<!-- Modal -->
+<div class="modal fade" id="offersModal" tabindex="-1" role="dialog" aria-labelledby="offersModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="width: 250px; margin-top: 250px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" style="text-align: center;">Offers</h4>
+      </div>
+      <div class="modal-body">
+        <% if @offers.length > 0 %>
+            <% @offers.each do |offer| %>
+                <div class=‘offer’>
+                  <div class=‘title’><%= link_to offer['title'], offer['link'] %></div>
+                  <div class=‘payout’><%= offer['payout'] %></div>
+                  <div class=‘thumbnail’><%= offer['thumbnail']['hires'] %></div>
+                </div>
+            <% end %>
+        <% else %>
+            <div class=‘no_offers’>
+              No offers
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

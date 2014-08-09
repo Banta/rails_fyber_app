@@ -1,6 +1,6 @@
 <div class="authform">
   <h3>Fill the form to check offers</h3>
-  <%= form_tag(offers_offers_path, :method => :get, :role => 'form') do %>
+  <%= form_tag(offers_offers_path, :method => :get, :role => 'form', remote: true) do %>
 
       <fieldset>
         <p>The unique User ID, as used internally in your application</p>
