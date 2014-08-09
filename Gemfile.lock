@@ -120,6 +120,14 @@ GEM
       rspec-support (~> 3.0.0)
     rspec-mocks (3.0.3)
       rspec-support (~> 3.0.0)
+    rspec-rails (3.0.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.0.0)
+      rspec-expectations (~> 3.0.0)
+      rspec-mocks (~> 3.0.0)
+      rspec-support (~> 3.0.0)
     rspec-support (3.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -173,6 +181,7 @@ DEPENDENCIES
   pry
   rails (= 4.1.4)
   rspec
+  rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)
   simple_form
   spring
